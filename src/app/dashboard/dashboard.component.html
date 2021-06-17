@@ -1,1 +1,72 @@
-<p>dashboard works!</p>
+<div class="container">
+  <div class="mb-3">
+    <label for="serveName" class="form-label">Server Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="serverName"
+      placeholder="Example server namer"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="serverContent" class="form-label">Server Content</label>
+    <input
+      type="text"
+      class="form-control"
+      id="serverContent"
+      placeholder="Example Content"
+    />
+  </div>
+  <button type="button" class="btn btn-primary m-1">Add Server</button>
+  <button type="button" class="btn btn-secondary">Add Server Blueprint</button>
+</div>
+<!--Group Lists -->
+<div class="row m-2">
+  <div class="col-6">
+    <li class="list-group-item list-group-item-primary">Server</li>
+    <ol class="list-group list-group-numbered" *ngFor ='let item of servers'>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{item.name}}</div>
+          Cras justo odio
+        </div>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="col-6">
+    <li class="list-group-item list-group-item-secondary">Server Blueprint</li>
+    <ol class="list-group list-group-numbered">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Subheading</div>
+          Cras justo odio
+        </div>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </li>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Subheading</div>
+          Cras justo odio
+        </div>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </li>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Subheading</div>
+          Cras justo odio
+        </div>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </li>
+    </ol>
+  </div>
+</div>
