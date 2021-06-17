@@ -9,3 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Video Safari - Angular (full App) with Angular Material, Angulafire and NgRx (also good)
 2. Angular - The Complete Guide 2020
 3. Link <https://learning.oreilly.com/videos/angular-the-complete/9781788998437/9781788998437-video5_9/>
+
+### Task: Add Bootstrap
+
+1. Run ```npm i bootstrap```
