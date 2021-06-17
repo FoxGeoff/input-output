@@ -1,26 +1,43 @@
 <div class="container">
   <div class="mb-3">
-    <label for="serveName" class="form-label">Server Name</label>
+    <label for="newName" class="form-label">Server Name</label>
     <input
       type="text"
       class="form-control"
-      id="serverName"
+      id="newName"
       placeholder="Example server namer"
+      name="newName"
+      [(ngModel)]="newName"
+      required
     />
   </div>
   <div class="mb-3">
-    <label for="serverContent" class="form-label">Server Content</label>
+    <label for="newContent" class="form-label">Server Content</label>
     <input
       type="text"
       class="form-control"
-      id="serverContent"
+      id="newContent"
       placeholder="Example Content"
+      name="newContent"
+      [(ngModel)]="newContent"
+      required
     />
   </div>
-  <button type="button" class="btn btn-primary m-1">Add Server</button>
-  <button type="button" class="btn btn-secondary">Add Server Blueprint</button>
+  <button class="btn btn-primary m-1" (click)="onAddServer()">
+    Add Server
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="onAddServerBlueprint()"
+  >
+    Add Server Blueprint
+  </button>
+  <h6>Add server to list: {{ newName }} {{ newContent }}</h6>
 </div>
-<!--Group Lists -->
+
+
+<!--Group List Servers -->
 <div class="row m-2">
   <div class="col-6">
     <li class="list-group-item list-group-item-primary">Server</li>
@@ -36,34 +53,16 @@
       </li>
     </ol>
   </div>
-
+  <!--Group List Servers -->
   <div class="col-6">
     <li class="list-group-item list-group-item-secondary">Server Blueprint</li>
-    <ol class="list-group list-group-numbered">
+    <ol class="list-group list-group" *ngFor="let item of bluePrints">
       <li
         class="list-group-item d-flex justify-content-between align-items-start"
       >
         <div class="ms-2 me-auto">
-          <div class="fw-bold">Subheading</div>
-          Cras justo odio
-        </div>
-        <span class="badge bg-primary rounded-pill">14</span>
-      </li>
-      <li
-        class="list-group-item d-flex justify-content-between align-items-start"
-      >
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">Subheading</div>
-          Cras justo odio
-        </div>
-        <span class="badge bg-primary rounded-pill">14</span>
-      </li>
-      <li
-        class="list-group-item d-flex justify-content-between align-items-start"
-      >
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">Subheading</div>
-          Cras justo odio
+          <div class="fw-bold text-primary">{{ item.name }}</div>
+          <div class="text-success">{{ item.content }} </div>
         </div>
         <span class="badge bg-primary rounded-pill">14</span>
       </li>

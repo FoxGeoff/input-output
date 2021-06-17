@@ -13,23 +13,40 @@ export class Server {
 })
 export class DashboardComponent implements OnInit {
 
-  name: string = '';
-  content: string = '';
+  newName: string = '';
+  newContent: string = '';
   servers: Server[] = [];
-
+  bluePrints: Server[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     this.servers = [
-      { name:'TestServer', content: 'This is just a name to test'},
-      { name: 'SecondServer', content: 'Another name to test'}
+      { name: 'TestServer', content: 'This is just a name to test' },
+      { name: 'SecondServer', content: 'Another name to test' }
     ]
-    console.log(this.servers);
+    this.bluePrints = [
+      { name: 'TestServer', content: 'This is just a name to test' },
+      { name: 'SecondServer', content: 'Another name to test' }
+    ]
   }
 
-  addServer() {
-    this.servers.push(new Server(this.name, this.content));
+  onAddServer() {
+    this.servers.push({
+      name: this.newName,
+      content: this.newContent
+    });
+    this.newName = "";
+    this.newContent ="";
+  }
+
+  onAddServerBlueprint() {
+    this.bluePrints.push({
+      name: this.newName,
+      content: this.newContent
+    });
+    this.newName = "";
+    this.newContent ="";
   }
 
 }
