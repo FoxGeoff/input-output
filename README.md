@@ -13,3 +13,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Task: Add Bootstrap
 
 1. Run ```npm i bootstrap```
+
+### Task: Add sever item components
