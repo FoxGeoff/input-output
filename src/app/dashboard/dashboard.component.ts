@@ -18,10 +18,7 @@ export class DashboardComponent implements OnInit {
   servers: Server[] = [];
   bluePrints: Server[] = [];
 
-  // now lets use for the collection an example javascript literal
-  serverElements = [
-    {name: 'Testserver', content: 'test text'}
-  ];
+
 
   constructor() { }
 

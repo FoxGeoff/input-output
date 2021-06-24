@@ -27,7 +27,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. We are now missing on the child component the definition of an 'element' (and collections of 'elements'; servers and bluePrints
 6. Now let's setup an alias name 'srvElement' for the exposed child element prop
 
-### Binding to a Custom Property - passing a value from the parent @Input to the child
+### Binding to a Custom Property - passing a value from the parent using @Input() on the child
 
 ```TypeScript
 // Child
@@ -54,4 +54,37 @@ export class DashboardComponent implements OnInit {
   *ngFor="let serverElement of serverElements"
   [srvElement]="serverElement"
 ></app-server-list>
+```
+
+## NOTE WE WILL NOW USE app.component as the Parent with server-list.component as the child
+
+### Binding to a Custom Event
+
+1. The Parent method onAddServer() is moved to the child and renamed onServerAdded() (button click event in the parent)
+2. The Parent method onAddServer() is moved to the child and renamed onSerBlueprintAdded() (button click event in the event)
+
+```TypeScript
+// from Parent now on the Child
+  onServerAdded() {
+  //   this.servers.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  }
+
+  onServerBlueprintAdded() {
+  //   this.bluePrints.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  }
+```
+
+```HTML
+// on the Parent Component
+
 ```

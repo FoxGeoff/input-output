@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'input-output';
+  
+  // now lets use for the collection an example javascript literal
+  serverElements = [
+    {name: 'Testserver', content: 'test text'}
+  ];
 }

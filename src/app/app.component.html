@@ -1,1 +1,12 @@
-<app-dashboard></app-dashboard>
+<div class="container">
+  <app-dashboard></app-dashboard>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-list
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+      ></app-server-list>
+    </div>
+  </div>
+</div>
