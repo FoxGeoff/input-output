@@ -14,4 +14,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Run ```npm i bootstrap```
 
-### Task: Add sever item components.
+### Task: Add sever item components
+
+### Kanban Task: Chapter 5 : Components and Databinding Deep Dive
+
+## Task: Binding to custom properties
+
+1. comment out the two method code in the parent
+2. In parent copy over the methods onAddServer() and onAddBlueprint() parent: dashboard.component
+3. onAddServer() and onAddBlueprint() to the child: server-list-component
+4. Move the template elements from parent to child component

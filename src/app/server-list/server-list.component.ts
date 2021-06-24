@@ -12,4 +12,21 @@ export class ServerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // onAddServer() {
+  //   this.servers.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  // }
+
+  // onAddServerBlueprint() {
+  //   this.bluePrints.push({
+  //     name: this.newName,
+  //     content: this.newContent
+  //   });
+  //   this.newName = "";
+  //   this.newContent ="";
+  // }
 }
