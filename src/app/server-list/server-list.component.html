@@ -1,1 +1,32 @@
-<p>server-list works!</p>
+<div class="row m-2">
+  <!--Group List 'servers' -->
+  <div class="col-6">
+    <li class="list-group-item list-group-item-primary">Server</li>
+    <ol class="list-group list-group"  >
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{ element.name }}</div>
+          {{ element.content }}
+        </div>
+        <span class="badge bg-primary rounded-pill">10</span>
+      </li>
+    </ol>
+  </div>
+  <!--Group List 'bluePrints' -->
+  <div class="col-6">
+    <li class="list-group-item list-group-item-secondary">Server Blueprint</li>
+    <ol class="list-group list-group" *ngFor="let item of bluePrints">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-start"
+      >
+        <div class="ms-2 me-auto">
+          <div class="fw-bold text-primary">{{ item.name }}</div>
+          <div class="text-success">{{ item.content }} </div>
+        </div>
+        <span class="badge bg-primary rounded-pill">14</span>
+      </li>
+    </ol>
+  </div>
+</div>
