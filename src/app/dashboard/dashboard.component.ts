@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 export class Server {
   name: string;
@@ -18,6 +18,11 @@ export class DashboardComponent implements OnInit {
   servers: Server[] = [];
   bluePrints: Server[] = [];
 
+  // broadcast to parent component, of type EvenEmitter<{...}>() to raise constructor method on the obj
+  @Output() serverCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
+  @Output() bluePrintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
+  newServerName = '';
+  newServerContent = '';
 
 
   constructor() { }
@@ -34,21 +39,17 @@ export class DashboardComponent implements OnInit {
   }
 
   onAddServer() {
-    // this.servers.push({
-    //   name: this.newName,
-    //   content: this.newContent
-    // });
-    // this.newName = "";
-    // this.newContent ="";
+    this.serverCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent
+    });
   }
 
-  onAddServerBlueprint() {
-    // this.bluePrints.push({
-    //   name: this.newName,
-    //   content: this.newContent
-    // });
-    // this.newName = "";
-    // this.newContent ="";
+  onAddBluePrint() {
+    this.bluePrintCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent
+    });
   }
 
 }

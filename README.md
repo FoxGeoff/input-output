@@ -60,11 +60,11 @@ export class DashboardComponent implements OnInit {
 
 ### Binding to a Custom Event
 
-1. The Parent method onAddServer() is moved to the child and renamed onServerAdded() (button click event in the parent)
-2. The Parent method onAddServer() is moved to the child and renamed onSerBlueprintAdded() (button click event in the event)
+1. The Parent method onAddServer() is moved to the Parent (app.component) and renamed onServerAdded() (button click event in the parent)
+2. The Parent method onAddServer() is moved to the Parent (app.component) and renamed onSerBlueprintAdded() (button click event in the event)
 
 ```TypeScript
-// from Parent now on the Child
+// from Parent now on the new Parent (app.component)
   onServerAdded() {
   //   this.servers.push({
   //     name: this.newName,
@@ -85,6 +85,50 @@ export class DashboardComponent implements OnInit {
 ```
 
 ```HTML
-// on the Parent Component
-
+<!-- on the Parent app.component -->
+<div class="container">
+  <app-dashboard
+    (serverCreated)="onServerAdded($event)"
+    (bluePrintCreated)="onServerBlueprintAdded($event)"
+  ></app-dashboard>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-list
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+      ></app-server-list>
+    </div>
+  </div>
+</div>
 ```
+
+```TypeScript
+export class AppComponent {
+  title = 'input-output';
+
+  // now lets use for the collection an example javascript literal
+  serverElements = [
+    { name: 'Testserver', content: 'test text' }
+  ];
+
+  // method #1 for events raised by button click() on child
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  // method #2 for events raised by button click() on child
+  onServerBluePrintAdded(bluePrintData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
+  }
+
+}
+```
+
+### Task: Child method and properties to raise up the event on button click() on dashbord.component to parent app.component

@@ -1,5 +1,8 @@
 <div class="container">
-  <app-dashboard></app-dashboard>
+  <app-dashboard
+    (serverCreated)="onServerAdded($event)"
+    (bluePrintCreated)="onServerBlueprintAdded($event)"
+  ></app-dashboard>
   <hr />
   <div class="row">
     <div class="col-xs-12">

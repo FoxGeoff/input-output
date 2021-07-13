@@ -2,7 +2,7 @@
   <!--Group List 'servers' -->
   <div class="col-6">
     <li class="list-group-item list-group-item-primary">Server</li>
-    <ol class="list-group list-group"  >
+    <ol class="list-group list-group"  *ngFor="let item of bluePrints">
       <li
         class="list-group-item d-flex justify-content-between align-items-start"
       >
@@ -15,6 +15,7 @@
     </ol>
   </div>
   <!--Group List 'bluePrints' -->
+  <!--
   <div class="col-6">
     <li class="list-group-item list-group-item-secondary">Server Blueprint</li>
     <ol class="list-group list-group" *ngFor="let item of bluePrints">
@@ -30,3 +31,4 @@
     </ol>
   </div>
 </div>
+-->
